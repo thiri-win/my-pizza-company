@@ -28,3 +28,18 @@ const prevBtn = document.querySelector("#prev");
 prevBtn.onclick = () => prevSlide()
 
 setInterval(nextSlide, 5000);
+
+const navlinks = document.querySelectorAll('nav ul a')
+const sections = document.querySelectorAll('section')
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            let activeSection = entry.target.getAttribute('id')
+            navlinks.forEach(nav => nav.classList.remove('active'))
+            document.querySelector(`nav ul a[href="#${activeSection}"]`).classList.add('active');
+        }
+    })
+}, { threshold: 0.5 })
+
+sections.forEach(section => observer.observe(section));

@@ -1,2 +1,2 @@
-This is My Pizza Website
+This is My Pizza Website. 
 ပီဇာ ဝက်ဆိုဒ်ပါ
